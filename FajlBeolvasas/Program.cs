@@ -17,7 +17,8 @@ namespace FajlBeolvasas
 			//KarakterStats(karakterek);
 			//CSVbeRako(karakterek);
 
-			Legjobb3Karakter(karakterek);
+			//Legjobb3Karakter(karakterek);
+			CsataVerseny(karakterek);
 
 
 
@@ -129,7 +130,31 @@ namespace FajlBeolvasas
 				Console.WriteLine(karakterek[i]);
 			}
 		}
-
+		static void CsataVerseny(List<Karakter> karakterek)
+		{
+			Random r = new();
+			int karakter1 = r.Next(0, karakterek.Count);
+			int karakter2 = r.Next(0, karakterek.Count);
+			Console.WriteLine("Csata: ELINDULT!!!!");
+			while (karakter1 == karakter2)
+			{
+				karakter2 = r.Next(0, karakterek.Count);
+			}
+			Console.WriteLine("Csata:");
+			Console.WriteLine($"{karakterek[karakter1]} vs {karakterek[karakter2]}");
+			if (karakterek[karakter1].Ero > karakterek[karakter2].Ero)
+			{
+				Console.WriteLine($"{karakterek[karakter1].Nev} nyert");
+			}
+			else if (karakterek[karakter1].Ero < karakterek[karakter2].Ero)
+			{
+				Console.WriteLine($"{karakterek[karakter2].Nev} nyert");
+			}
+			else
+			{
+				Console.WriteLine("Döntetlen");
+			}
+		}
 
 	} 
 }
