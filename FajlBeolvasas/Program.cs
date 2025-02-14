@@ -12,10 +12,12 @@ namespace FajlBeolvasas
 			Beolvasas("karakterek.txt", karakterek);
 			Eletlegtobb(karakterek);
 			AtlagSzint(karakterek);
-				//RendezoErosseg(karakterek);
+			//RendezoErosseg(karakterek);
 			//Nagyobbe50nel(karakterek);
-			KarakterStats(karakterek);
-			CSVbeRako(karakterek);
+			//KarakterStats(karakterek);
+			//CSVbeRako(karakterek);
+
+			Legjobb3Karakter(karakterek);
 
 
 
@@ -108,15 +110,24 @@ namespace FajlBeolvasas
 
         }
 
-		static void CSVbeRako(List<Karakter> karakterek)
+		//static void CSVbeRako(List<Karakter> karakterek)
+		//{
+		//	StreamWriter sw = new("kimenet.csv");
+		//	sw.WriteLine("Név;Erő;Élet;Szint");
+		//	foreach (var item in karakterek)
+		//	{
+		//		sw.WriteLine($"{item.Nev};{item.Ero};{item.Eletero};{item.Szint}");
+		//	}
+		//	sw.Close();
+		//}
+		static void Legjobb3Karakter(List<Karakter> karakterek)
 		{
-			StreamWriter sw = new("kimenet.csv");
-			sw.WriteLine("Név;Erő;Élet;Szint");
-			foreach (var item in karakterek)
+			Console.WriteLine("Legjobb 3 karakter:");
+			karakterek.Sort((x, y) => y.Ero.CompareTo(x.Ero));
+			for (int i = 0; i < 3; i++)
 			{
-				sw.WriteLine($"{item.Nev};{item.Ero};{item.Eletero};{item.Szint}");
+				Console.WriteLine(karakterek[i]);
 			}
-			sw.Close();
 		}
 
 
