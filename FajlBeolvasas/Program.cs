@@ -10,8 +10,8 @@ namespace FajlBeolvasas
 			List<Karakter> karakterek = [];
 
 			Beolvasas("karakterek.txt", karakterek);
-			Eletlegtobb(karakterek);
-			AtlagSzint(karakterek);
+			//Eletlegtobb(karakterek);
+			//AtlagSzint(karakterek);
 			//RendezoErosseg(karakterek);
 			//Nagyobbe50nel(karakterek);
 			//KarakterStats(karakterek);
@@ -19,7 +19,8 @@ namespace FajlBeolvasas
 
 			//Legjobb3Karakter(karakterek);
 			//CsataVerseny(karakterek);
-			KarakterRangsor(karakterek);
+			//KarakterRangsor(karakterek);
+			//CsataVerseny(karakterek);
 			
 
 
@@ -156,13 +157,14 @@ namespace FajlBeolvasas
 			Random r = new();
 			int karakter1 = r.Next(0, karakterek.Count);
 			int karakter2 = r.Next(0, karakterek.Count);
-			Console.WriteLine("Csata: ELINDULT!!!!");
+
 			while (karakter1 == karakter2)
 			{
 				karakter2 = r.Next(0, karakterek.Count);
 			}
-			Console.WriteLine("Csata:");
-			Console.WriteLine($"{karakterek[karakter1]} vs {karakterek[karakter2]}");
+			Console.WriteLine("Csata: ELINDULT!!!!");
+			Console.WriteLine($"{karakterek[karakter1].Nev} vs {karakterek[karakter2].Nev}");
+
 			if (karakterek[karakter1].Ero > karakterek[karakter2].Ero)
 			{
 				Console.WriteLine($"{karakterek[karakter1].Nev} nyert");
