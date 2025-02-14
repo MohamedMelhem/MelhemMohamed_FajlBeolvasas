@@ -19,6 +19,7 @@ namespace FajlBeolvasas
 
 			//Legjobb3Karakter(karakterek);
 			//CsataVerseny(karakterek);
+			KarakterRangsor(karakterek);
 			
 
 
@@ -137,14 +138,17 @@ namespace FajlBeolvasas
 
 
 
-		static void KarakterRangsorEleteroEsErosseg(List<Karakter> karakterek)
+		static void KarakterRangsor(List<Karakter> karakterek)
 		{
-			Console.WriteLine("Karakterek rangsora életerő és erősség szerint:");
-			karakterek.Sort((x, y) => x.Eletero.CompareTo(y.Eletero));
-			karakterek.Sort((x, y) => x.Ero.CompareTo(y.Ero));
+			Console.WriteLine("");
+			Console.WriteLine("9. Feladat");
+			Console.WriteLine("Karakterek rangsora:");
+			Console.WriteLine("Név\tEro\tÉleterő\tSzint");
+			int helyezes = 1;
 			foreach (var item in karakterek)
 			{
-				Console.WriteLine(item);
+				Console.WriteLine($"{helyezes}. {item.Nev}\t{item.Ero}\t{item.Eletero}\t{item.Szint}");
+				helyezes++;
 			}
 		}
 		static void CsataVerseny(List<Karakter> karakterek)
