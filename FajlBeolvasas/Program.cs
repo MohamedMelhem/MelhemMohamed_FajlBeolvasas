@@ -12,8 +12,9 @@ namespace FajlBeolvasas
 			Beolvasas("karakterek.txt", karakterek);
 			Eletlegtobb(karakterek);
 			AtlagSzint(karakterek);
-			RendezoErosseg(karakterek);
-			Nagyobbe50nel(karakterek);
+				//RendezoErosseg(karakterek);
+			//Nagyobbe50nel(karakterek);
+			KarakterStats(karakterek);
 
 
 
@@ -92,7 +93,19 @@ namespace FajlBeolvasas
 				}
 			}
 		}
+		static void KarakterStats(List<Karakter> karakterek)
+		{
+            Console.WriteLine("");
+			Console.WriteLine("Karakterek statisztikája:");
+			Console.WriteLine("Név\tErő\tÉlet\tSzint");
+			foreach (var item in karakterek)
+			{
+				Console.WriteLine(item);
+				Console.WriteLine($"{item.Nev}\t{item.Ero}\t{item.Eletero}\t{item.Szint}");
 
+			}
+
+        }
 
 
 	} 
