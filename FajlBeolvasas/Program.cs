@@ -15,6 +15,7 @@ namespace FajlBeolvasas
 				//RendezoErosseg(karakterek);
 			//Nagyobbe50nel(karakterek);
 			KarakterStats(karakterek);
+			CSVbeRako(karakterek);
 
 
 
@@ -106,6 +107,17 @@ namespace FajlBeolvasas
 			}
 
         }
+
+		static void CSVbeRako(List<Karakter> karakterek)
+		{
+			StreamWriter sw = new("kimenet.csv");
+			sw.WriteLine("Név;Erő;Élet;Szint");
+			foreach (var item in karakterek)
+			{
+				sw.WriteLine($"{item.Nev};{item.Ero};{item.Eletero};{item.Szint}");
+			}
+			sw.Close();
+		}
 
 
 	} 
