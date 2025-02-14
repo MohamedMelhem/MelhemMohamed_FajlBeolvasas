@@ -18,7 +18,11 @@ namespace FajlBeolvasas
 			//CSVbeRako(karakterek);
 
 			//Legjobb3Karakter(karakterek);
-			CsataVerseny(karakterek);
+			//CsataVerseny(karakterek);
+			
+
+
+
 
 
 
@@ -128,6 +132,19 @@ namespace FajlBeolvasas
 			for (int i = 0; i < 3; i++)
 			{
 				Console.WriteLine(karakterek[i]);
+			}
+		}
+
+
+
+		static void KarakterRangsorEleteroEsErosseg(List<Karakter> karakterek)
+		{
+			Console.WriteLine("Karakterek rangsora életerő és erősség szerint:");
+			karakterek.Sort((x, y) => x.Eletero.CompareTo(y.Eletero));
+			karakterek.Sort((x, y) => x.Ero.CompareTo(y.Ero));
+			foreach (var item in karakterek)
+			{
+				Console.WriteLine(item);
 			}
 		}
 		static void CsataVerseny(List<Karakter> karakterek)
